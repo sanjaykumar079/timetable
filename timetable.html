@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Timetable for {{ field_id }} - Year {{ year }}</h2>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Time/Period</th>
+                {% for day in days %}
+                    <th>{{ day }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for period in periods %}
+                <tr>
+                    <td>Period {{ period }}</td>
+                    {% for day in days %}
+                        <td>
+                            {% if pre_booked[day][period] %}
+                                {% for section_id, data in pre_booked[day][period].items() %}
+                                    <p><strong>Pre-booked: {{ data.name }}</strong></p>
+                                {% endfor %}
+                            {% elif schedule[day][period] %}
+                                {% for section_id, slots in schedule[day][period].items() %}
+                                    {% for slot in slots %}
+                                        <p>{{ slot.subject }}<br>Room: {{ slot.room }}<br>Faculty: {{ slot.faculty }}</p>
+                                    {% endfor %}
+                                {% endfor %}
+                            {% else %}
+                                <p class="empty-slot">Free Slot</p>
+                            {% endif %}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('select_options', field=field_id, year=year) }}" class="glow-button">Back to Options</a>
+    <a href="{{ url_for('download_timetable', field_id=field_id, year=year, schedule=schedule|tojson, pre_booked=pre_booked|tojson, sections=sections|tojson) }}" class="glow-button">Download PDF</a>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <section class="hero-section">
+        <div class="hero-text">
+            <h1>Welcome to Timetable Generator</h1>
+            <a href="{{ url_for('select_options') }}" class="glow-button">Get Started</a>
+            <p>Generate schedules for your academic sections with ease.</p>
+        </div>
+        <img src="{{ url_for('static', filename='4292944.webp') }}" alt="Timetable Illustration" class="hero-image">
+    </section>
+{% endblock %}

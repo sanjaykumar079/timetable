@@ -1,0 +1,122 @@
+TEACHERS_BY_FIELD = {
+    "CSE": [
+        {"teacher_id": "T1", "name": "Anita Sharma", "subject": "Java", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "T2", "name": "Bharat Singh", "subject": "DBMS", "slots_per_week": 6, "sections": ["B"]},
+        {"teacher_id": "T3", "name": "Chitra Reddy", "subject": "Python", "slots_per_week": 4, "sections": ["A"]},
+        {"teacher_id": "T4", "name": "Deepak Patel", "subject": "Maths", "slots_per_week": 6, "sections": ["B"]},
+        {"teacher_id": "T5", "name": "Esha Gupta", "subject": "AI", "slots_per_week": 4, "sections": ["A"]},
+        {"teacher_id": "T6", "name": "Firoz Khan", "subject": "IC", "slots_per_week": 2, "sections": ["B"]},
+        {"teacher_id": "T7", "name": "Gaurav Mehta", "subject": "OS", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "T8", "name": "Harsha Nair", "subject": "CN", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "T9", "name": "Ishaan Bose", "subject": "Compiler Design", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "T10", "name": "Jyoti Verma", "subject": "Software Engineering", "slots_per_week": 4, "sections": ["B"]}
+    ],
+    "AIML": [
+        {"teacher_id": "A1", "name": "Priya Menon", "subject": "Machine Learning", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "A2", "name": "Rahul Kapoor", "subject": "Deep Learning", "slots_per_week": 6, "sections": ["B"]},
+        {"teacher_id": "A3", "name": "Sonia Gupta", "subject": "NLP", "slots_per_week": 4, "sections": ["A"]},
+        {"teacher_id": "A4", "name": "Vikram Seth", "subject": "AI Ethics", "slots_per_week": 2, "sections": ["B"]},
+        {"teacher_id": "A5", "name": "Manisha Joshi", "subject": "Computer Vision", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "A6", "name": "Rakesh Yadav", "subject": "Reinforcement Learning", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "A7", "name": "Sneha Roy", "subject": "AI Applications", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "A8", "name": "Tarun Mehta", "subject": "Data Science", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "A9", "name": "Usha Pillai", "subject": "Explainable AI", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "A10", "name": "Vikas Reddy", "subject": "AI for Healthcare", "slots_per_week": 4, "sections": ["B"]}
+    ],
+    "CSD": [
+        {"teacher_id": "C1", "name": "Ravi Sharma", "subject": "UI/UX Design", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "C2", "name": "Meena Roy", "subject": "Graphics", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "C3", "name": "Amit Kumar", "subject": "3D Modeling", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "C4", "name": "Neha Malhotra", "subject": "Game Design", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "C5", "name": "Rajesh Singh", "subject": "Human-Computer Interaction", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "C6", "name": "Ananya Bose", "subject": "Motion Graphics", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "C7", "name": "Kunal Das", "subject": "Typography", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "C8", "name": "Shruti Tiwari", "subject": "Illustration", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "C9", "name": "Vishal Kapoor", "subject": "Animation", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "C10", "name": "Priyanka Jain", "subject": "Digital Media", "slots_per_week": 4, "sections": ["B"]}
+    ],
+    "CSM": [
+        {"teacher_id": "M1", "name": "Arjun Singh", "subject": "Advanced Maths", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "M2", "name": "Pooja Verma", "subject": "Statistics", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "M3", "name": "Rahul Jain", "subject": "Discrete Mathematics", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "M4", "name": "Neha Sharma", "subject": "Linear Algebra", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "M5", "name": "Vikram Singh", "subject": "Calculus", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "M6", "name": "Seema Desai", "subject": "Probability", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "M7", "name": "Rohan Gupta", "subject": "Graph Theory", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "M8", "name": "Meera Kapoor", "subject": "Abstract Algebra", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "M9", "name": "Karan Patel", "subject": "Topology", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "M10", "name": "Simran Kaur", "subject": "Numerical Methods", "slots_per_week": 4, "sections": ["B"]}
+    ],
+    "MEC": [
+        {"teacher_id": "ME1", "name": "Suresh Patil", "subject": "Thermodynamics", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "ME2", "name": "Rekha Menon", "subject": "Mechanics", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "ME3", "name": "Amit Verma", "subject": "Fluid Mechanics", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "ME4", "name": "Priya Deshmukh", "subject": "Machine Design", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "ME5", "name": "Rakesh Rao", "subject": "Manufacturing Processes", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "ME6", "name": "Anjali Kulkarni", "subject": "Dynamics", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "ME7", "name": "Nitin Gupta", "subject": "Materials Science", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "ME8", "name": "Shalini Joshi", "subject": "Heat Transfer", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "ME9", "name": "Vivek Sharma", "subject": "Robotics", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "ME10", "name": "Pooja Singh", "subject": "CAD/CAM", "slots_per_week": 4, "sections": ["B"]}
+    ],
+    "IT": [
+        {"teacher_id": "IT1", "name": "Vijay Kumar", "subject": "Cybersecurity", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "IT2", "name": "Anjali Shah", "subject": "Cloud Computing", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "IT3", "name": "Rohan Mehta", "subject": "Network Security", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "IT4", "name": "Shweta Reddy", "subject": "Data Structures", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "IT5", "name": "Kiran Desai", "subject": "Operating Systems", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "IT6", "name": "Nisha Patel", "subject": "Software Engineering", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "IT7", "name": "Sandeep Roy", "subject": "Web Technologies", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "IT8", "name": "Meera Nair", "subject": "Mobile Computing", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "IT9", "name": "Arvind Kumar", "subject": "Database Systems", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "IT10", "name": "Kavita Singh", "subject": "Information Systems", "slots_per_week": 4, "sections": ["B"]}
+    ],
+    "EEE": [
+        {"teacher_id": "E1", "name": "Manoj Reddy", "subject": "Circuits", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "E2", "name": "Sarita Bose", "subject": "Power Systems", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "E3", "name": "Vikram Singh", "subject": "Electromagnetics", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "E4", "name": "Anita Gupta", "subject": "Control Systems", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "E5", "name": "Rajesh Kumar", "subject": "Digital Electronics", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "E6", "name": "Neha Kapoor", "subject": "Analog Electronics", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "E7", "name": "Suresh Menon", "subject": "Microprocessors", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "E8", "name": "Pooja Sharma", "subject": "Signal Processing", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "E9", "name": "Amit Chatterjee", "subject": "VLSI Design", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "E10", "name": "Kavita Reddy", "subject": "Power Electronics", "slots_per_week": 4, "sections": ["B"]}
+    ],
+    "ECE": [
+        {"teacher_id": "EC1", "name": "Nikhil Gupta", "subject": "Signal Processing", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "EC2", "name": "Tara Das", "subject": "Embedded Systems", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "EC3", "name": "Rahul Sharma", "subject": "Digital Communication", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "EC4", "name": "Sonal Patel", "subject": "VLSI", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "EC5", "name": "Deepak Rao", "subject": "Antenna Design", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "EC6", "name": "Megha Jain", "subject": "Microwave Engineering", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "EC7", "name": "Amit Verma", "subject": "Wireless Communication", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "EC8", "name": "Pallavi Nair", "subject": "Optical Communication", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "EC9", "name": "Siddharth Singh", "subject": "Communication Systems", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "EC10", "name": "Ritu Sharma", "subject": "RF Engineering", "slots_per_week": 4, "sections": ["B"]}
+    ],
+    "CSR": [
+        {"teacher_id": "CR1", "name": "Kunal Mehra", "subject": "Research Methods", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "CR2", "name": "Divya Rao", "subject": "Data Analysis", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "CR3", "name": "Anil Kapoor", "subject": "Business Ethics", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "CR4", "name": "Sunita Singh", "subject": "Sustainability", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "CR5", "name": "Rohit Joshi", "subject": "Community Engagement", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "CR6", "name": "Pooja Mehta", "subject": "Social Research", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "CR7", "name": "Manoj Gupta", "subject": "CSR Strategies", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "CR8", "name": "Nandini Iyer", "subject": "Impact Assessment", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "CR9", "name": "Vijay Kumar", "subject": "Sustainable Development", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "CR10", "name": "Rekha Sharma", "subject": "Ethical Leadership", "slots_per_week": 4, "sections": ["B"]}
+    ],
+    "CSE(AIML)": [
+        {"teacher_id": "CA1", "name": "Shalini Tiwari", "subject": "AI Fundamentals", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "CA2", "name": "Rohit Bansal", "subject": "ML Applications", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "CA3", "name": "Neeraj Singh", "subject": "Data Mining", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "CA4", "name": "Kiran Rao", "subject": "Big Data Analytics", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "CA5", "name": "Rashmi Verma", "subject": "Neural Networks", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "CA6", "name": "Amitabh Sharma", "subject": "Deep Reinforcement Learning", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "CA7", "name": "Sonal Desai", "subject": "Computer Vision", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "CA8", "name": "Manish Kapoor", "subject": "Natural Language Processing", "slots_per_week": 4, "sections": ["B"]},
+        {"teacher_id": "CA9", "name": "Pallavi Singh", "subject": "Robotics", "slots_per_week": 6, "sections": ["A"]},
+        {"teacher_id": "CA10", "name": "Tarun Agarwal", "subject": "AI in Healthcare", "slots_per_week": 4, "sections": ["B"]}
+    ]
+}

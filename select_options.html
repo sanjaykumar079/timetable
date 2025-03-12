@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Select Options</h2>
+    <form method="POST" action="{{ url_for('select_options') }}">
+        <div class="futuristic-form">
+            <label for="field">Field:</label>
+            <select name="field" id="field" onchange="this.form.submit()">
+                <option value="">Select Field</option>
+                {% for field in fields %}
+                    <option value="{{ field.field_id }}" {{ 'selected' if selected_field == field.field_id else '' }}>
+                        {{ field.name }}
+                    </option>
+                {% endfor %}
+            </select>
+
+            <label for="year">Year:</label>
+            <select name="year" id="year" onchange="this.form.submit()">
+                <option value="">Select Year</option>
+                {% for year in years %}
+                    <option value="{{ year.year }}" {{ 'selected' if selected_year == year.year|string else '' }}>
+                        {{ year.name }}
+                    </option>
+                {% endfor %}
+            </select>
+
+            {% if selected_field and selected_year %}
+                <h3>Manage Sections</h3>
+                <label for="num_sections">Number of Sections:</label>
+                <input type="number" name="num_sections" id="num_sections" value="{{ num_sections }}" min="1">
+                <button type="submit" name="action" value="edit_sections" class="glow-button">Update Sections</button>
+
+                <h3>Pre-book Slots</h3>
+                {% for section in sections %}
+                    <h4>Section {{ section.section_letter }}</h4>
+                    <label for="slot_name_{{ section.section_letter }}">Slot Name:</label>
+                    <input type="text" name="slot_name" id="slot_name_{{ section.section_letter }}" value="{{ pre_booked_slots.get((selected_field, selected_year, section.section_letter), {'name': ''}).name }}">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                {% for day in days %}
+                                    <th>{{ day }}</th>
+                                {% endfor %}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for period in periods %}
+                                <tr>
+                                    {% for day in days %}
+                                        {% set slot_key = 'slot_' + day + '_' + period|string %}
+                                        <td>
+                                            <input type="checkbox" name="{{ slot_key }}" id="{{ slot_key }}_{{ section.section_letter }}"
+                                                   {{ 'checked' if (day, period) in pre_booked_slots.get((selected_field, selected_year, section.section_letter), {'slots': []}).get('slots', []) }}>
+                                        </td>
+                                    {% endfor %}
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <button type="submit" name="action" value="pre_book_slots" class="glow-button">Pre-book Slots</button>
+                    <input type="hidden" name="section_letter" value="{{ section.section_letter }}">
+                {% endfor %}
+
+                <h3>Generate Timetable</h3>
+                <button type="submit" name="action" value="generate_timetable" class="glow-button">Generate Timetable</button>
+
+                <h3>Manage Teachers</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Subject</th>
+                            <th>Slots/Week</th>
+                            <th>Section</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for teacher in teachers %}
+                            <tr>
+                                <td>{{ teacher.teacher_id }}</td>
+                                <td>{{ teacher.name }}</td>
+                                <td>{{ teacher.subject }}</td>
+                                <td>{{ teacher.slots_per_week }}</td>
+                                <td>{{ teacher.sections|join(', ') }}</td>
+                                <td>
+                                    <button type="submit" name="action" value="edit_teacher" class="glow-button"
+                                            formaction="{{ url_for('select_options', field=selected_field, year=selected_year) }}"
+                                            onclick="document.getElementById('teacher_id').value='{{ teacher.teacher_id }}';
+                                                     document.getElementById('name').value='{{ teacher.name }}';
+                                                     document.getElementById('subject').value='{{ teacher.subject }}';
+                                                     document.getElementById('slots_per_week').value='{{ teacher.slots_per_week }}';
+                                                     document.getElementById('section').value='{{ teacher.sections[0] }}';">Edit</button>
+                                    <button type="submit" name="action" value="delete_teacher" class="glow-button danger"
+                                            onclick="return confirm('Are you sure you want to delete {{ teacher.name }}?');"
+                                            formaction="{{ url_for('select_options', field=selected_field, year=selected_year) }}">Delete</button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <h4>Add New Teacher</h4>
+                <label for="name">Name:</label><input type="text" name="name" id="name">
+                <label for="subject">Subject:</label><input type="text" name="subject" id="subject">
+                <label for="slots_per_week">Slots/Week:</label><input type="number" name="slots_per_week" id="slots_per_week" min="1">
+                <label for="section">Section:</label>
+                <select name="section" id="section">
+                    {% for i in range(num_sections) %}
+                        <option value="{{ chr(65 + i) }}">{{ chr(65 + i) }}</option>
+                    {% endfor %}
+                </select>
+                <input type="hidden" name="teacher_id" id="teacher_id">
+                <button type="submit" name="action" value="add_teacher" class="glow-button">Add Teacher</button>
+            {% endif %}
+        </div>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+{% endblock %}
